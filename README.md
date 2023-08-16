@@ -10,7 +10,6 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
-
+* Name: Nguyen Duy An
+* ID: BI12-006
+* Group ID: 17
