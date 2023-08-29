@@ -13,4 +13,5 @@ Fames ac turpis egestas maecenas. Augue mauris augue neque gravida in fermentum 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview">TextView</string>
+    <string name="weathericon">WeatherIcon</string>
 </resources>

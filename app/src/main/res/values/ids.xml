@@ -3,4 +3,5 @@
     <item name="text_message" type="id" />
     <item name="textView1" type="id" />
     <item name="textView2" type="id" />
+    <item name="imgView1" type="id" />
 </resources>

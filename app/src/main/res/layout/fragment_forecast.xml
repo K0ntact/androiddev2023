@@ -3,29 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4a76ba"
     android:orientation="vertical"
-    tools:context=".ForecastFragment">
+    tools:context=".ForecastFragment"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="20dp">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imgView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#ebebeb"
-        android:text="@string/hello_blank_fragment" />
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="10dp"
+        android:background="#ff685e"
+        android:contentDescription="@string/weathericon"
+        android:src="@drawable/weather" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#ebebeb"
-        android:text="@string/textview" />
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#55cf64"
+            android:text="@string/lorem_ipsum" />
+    </ScrollView>
 
 
 </LinearLayout>
