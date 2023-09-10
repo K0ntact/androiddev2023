@@ -9,7 +9,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:background="@android:color/holo_green_light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

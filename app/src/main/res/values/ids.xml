@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_message" type="id" />
+    <item name="textView" type="id" />
     <item name="textView1" type="id" />
     <item name="textView2" type="id" />
-    <item name="imgView1" type="id" />
+    <item name="imageView" type="id" />
+    <item name="imageView1" type="id" />
+    <item name="imageView2" type="id" />
+    <item name="listView1" type="id" />
+    <item name="gridLayout" type="id" />
+    <item name="linearLayout" type="id" />
 </resources>
