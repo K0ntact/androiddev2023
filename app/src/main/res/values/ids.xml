@@ -10,4 +10,9 @@
     <item name="listView1" type="id" />
     <item name="gridLayout" type="id" />
     <item name="linearLayout" type="id" />
+    <item name="tempView" type="id" />
+    <item name="weatherDetailsView" type="id" />
+    <item name="weatherCityNameView" type="id" />
+    <item name="relativeLayout" type="id" />
+    <item name="imageView3" type="id" />
 </resources>
