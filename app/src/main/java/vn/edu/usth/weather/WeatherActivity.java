@@ -1,9 +1,13 @@
 package vn.edu.usth.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.util.Log;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -11,17 +15,29 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        WeatherFragment detailForecast = new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.detailWeatherFragmentContainerView, detailForecast).commit();
-
-        ForecastFragment dailyForecast = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.dailyForecastFragmentContainerView, dailyForecast).commit();
-
         Log.i("WeatherActivity", "onCreate() called");
         setContentView(R.layout.activity_weather);
+
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+        FragmentStateAdapter adapter = new WnFAdapter(this);
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.cityTabLayout);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab unused) {
+                viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab unused) {
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab unused) {
+            }
+        }
+        );
     }
 
     @Override
