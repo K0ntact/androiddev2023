@@ -76,15 +76,25 @@ public class WeatherAndForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_weather_and_forecast, container, false);
         GridLayout gridLayout = view.findViewById(R.id.gridLayout);
+        return view;
+    }
 
+    // On resume, update the weather details and forecast with data from the API
+    @Override
+    public void onResume() {
+        super.onResume();
         try {
             latch.await();
-            updateCurrent(view,currentJson);
+            View view = getView();
+            assert view != null;
+            GridLayout gridLayout = view.findViewById(R.id.gridLayout);
+            updateCurrent(view, currentJson);
             updateForecast(gridLayout, forecastJson);
+
+            gridLayout.removeView(view.findViewById(R.id.noDataPlaceholder));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return view;
     }
 
     private void updateCurrent(View view,String currentString) {
@@ -111,7 +121,7 @@ public class WeatherAndForecastFragment extends Fragment {
         weatherConditionView.setText(currentWeatherCondition);
 
         TextView lastUpdatedView = view.findViewById(R.id.lastUpdateView);
-        lastUpdatedView.setText("Last update: " + lastUpdated);
+        lastUpdatedView.setText(getString(R.string.last_update) + lastUpdated);
 
         ImageView imageView = view.findViewById(R.id.imageView);
         Picasso.get().load("https:" + currentWeatherImageUrl).into(imageView);
@@ -135,9 +145,6 @@ public class WeatherAndForecastFragment extends Fragment {
                 forecastWeatherConditions.add(condition.getString("text"));
                 forecastWeatherImageUrls.add(condition.getString("icon").replace("64x64", "128x128"));
             }
-
-            System.out.println(forecastMaxTempCs);
-            System.out.println(forecastMinTempCs);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -19,11 +20,11 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
 
         ViewPager2 viewPager = findViewById(R.id.viewPager);
-        FragmentStateAdapter adapter = new WnFAdapter(this);
+        FragmentStateAdapter adapter = new WnFAdapter(this);    // Once the adapter is triggered, it will run onCreate() on all fragments
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = findViewById(R.id.cityTabLayout);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        TabLayout.OnTabSelectedListener listener = new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab unused) {
                 viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
@@ -36,8 +37,23 @@ public class WeatherActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab unused) {
             }
-        }
-        );
+        };
+        tabLayout.addOnTabSelectedListener(listener);
+
+        TabLayoutMediator mediator = new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setText("Hanoi");
+                    break;
+                case 1:
+                    tab.setText("Paris");
+                    break;
+                case 2:
+                    tab.setText("Toulouse");
+                    break;
+            }
+        });
+        mediator.attach();
     }
 
     @Override
