@@ -22,11 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/tempView"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
             android:gravity="end"
-            android:text="Hanoi"
-            android:textSize="25sp"/>
+            android:text="@string/city"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tempView"
@@ -35,7 +36,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="20°C"
+            android:text="@string/temperature"
             android:textSize="20sp" />
 
         <TextView
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tempView"
             android:layout_marginStart="10dp"
-            android:text="Weather Condition"
+            android:text="@string/weather_condition"
             android:textSize="20sp" />
 
         <TextView
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/weatherDetailsView"
             android:layout_marginStart="10dp"
-            android:text="Last update: "
+            android:text="@string/last_update"
             android:textSize="15sp"/>
 
         <ImageView
@@ -75,5 +76,13 @@
         android:layout_marginBottom="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp">
+
+        <TextView
+            android:id="@+id/noDataPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/no_data" />
     </GridLayout>
 </LinearLayout>

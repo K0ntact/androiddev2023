@@ -14,4 +14,12 @@ Fames ac turpis egestas maecenas. Augue mauris augue neque gravida in fermentum 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview">TextView</string>
     <string name="weathericon">WeatherIcon</string>
+    <string name="last_update">"Last update: "</string>
+    <string name="temperature">Temperature</string>
+    <string name="city">City</string>
+    <string name="no_data">No data</string>
+    <string name="hanoi">Hanoi</string>
+    <string name="paris">Paris</string>
+    <string name="toulouse">Toulouse</string>
+    <string name="weather_condition">Weather Condition</string>
 </resources>
